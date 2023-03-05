@@ -1,4 +1,5 @@
 import './globals.css'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +13,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <main>
+          <nav>
+            <div className ="topnav">
+              <a href="">Home</a>
+              <a href="#buy">Buy</a>
+              <a href="#rent">Rent</a>
+              <a href="#sell">Sell</a>
+              <a href="#about">About</a>
+              <a href="#signIn">Sign in</a>   
+              <Image 
+              src="/vercel.png"
+              alt="Vercel Logo"
+              width={50}
+              height={50}
+              priority/>   
+            </div>
+          </nav>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
